@@ -44,6 +44,11 @@ android {
     }
 }
 
+configurations.all {
+    // Check for updates every build
+    resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+}
+
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
@@ -54,7 +59,10 @@ dependencies {
     compile 'com.android.support:support-vector-drawable:25.2.0'
 
     //My own Android Accessibility Utilities Library.
-    compile 'com.github.chriscm2006:Android-Accessibility-Utilities:b2caa7787ecf42be6b25da542086aae4ee54185d'
+    compile 'com.github.chriscm2006:Android-Accessibility-Utilities:-SNAPSHOT'
+
+    //My own logger library.
+    compile 'com.github.chriscm2006:ChrisLogger:-SNAPSHOT'
 
     testCompile 'junit:junit:4.12'
 }

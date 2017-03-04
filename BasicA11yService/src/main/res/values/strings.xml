@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Basice Accessibility Service</string>
-    <string name="accesibility_service_description">A simple accessibility service that outputs the entire node heirarchy to LogCat on hover events.</string>
+    <string name="accessibility_service_description">A simple accessibility service that outputs the entire node heirarchy to LogCat on hover events.</string>
 
     <!-- Strings related to Settings -->
 
