@@ -1,0 +1,60 @@
+apply plugin: 'com.android.application'
+
+def getVersionCodeString = { ->
+    def stdout = new ByteArrayOutputStream()
+    exec {
+        commandLine 'git', 'rev-list', '--all', '--count'
+        standardOutput = stdout
+    }
+    return stdout.toString().trim()
+}
+
+def getVersionCode = { ->
+    return Integer.parseInt(getVersionCodeString())
+}
+
+def getVersionName = { ->
+    def stdout = new ByteArrayOutputStream()
+
+    exec {
+        commandLine 'git', 'describe', '--tags', '--abbrev=0'
+        standardOutput = stdout
+    }
+
+    return stdout.toString().trim().concat("." + getVersionCodeString())
+}
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.1"
+    defaultConfig {
+        applicationId "com.moba11y.basiceaccessibilityservice"
+        minSdkVersion 18
+        targetSdkVersion 25
+        versionCode getVersionCode()
+        versionName getVersionName()
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:25.2.0'
+    compile 'com.android.support:support-v4:25.2.0'
+    compile 'com.android.support:support-vector-drawable:25.2.0'
+
+    //My own Android Accessibility Utilities Library.
+    compile 'com.github.chriscm2006:Android-Accessibility-Utilities:b2caa7787ecf42be6b25da542086aae4ee54185d'
+
+    testCompile 'junit:junit:4.12'
+}
