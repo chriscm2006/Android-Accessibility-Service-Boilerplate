@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.moba11y.basiceaccessibilityservice">
+    package="com.moba11y.basicaccessibilityservice">
 
 
     <application
@@ -11,7 +11,7 @@
         android:theme="@style/AppTheme">
 
         <service
-            android:name=".BasicAccessibilityService"
+            android:name="com.moba11y.basicaccessibilityservice.BasicAccessibilityService"
             android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE" >
 
             <intent-filter>
@@ -24,7 +24,7 @@
 
         </service>
         <activity
-            android:name=".SettingsActivity"
+            android:name="com.moba11y.basicaccessibilityservice.SettingsActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

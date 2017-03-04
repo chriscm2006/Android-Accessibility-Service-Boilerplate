@@ -2,10 +2,10 @@
 <accessibility-service xmlns:android="http://schemas.android.com/apk/res/android"
     android:description="@string/accessibility_service_description"
     android:accessibilityEventTypes="typeAllMask"
-    android:accessibilityFlags="flagIncludeNotImportantViews|flagReportViewIds"
+    android:accessibilityFlags="flagReportViewIds"
     android:canRetrieveWindowContent="true"
     android:canRequestTouchExplorationMode="true"
     android:accessibilityFeedbackType="feedbackSpoken"
     android:notificationTimeout="100"
-    android:settingsActivity="com.deque.accessibilityanalyzer.SettingsActivity"
+    android:settingsActivity="com.moba11y.basicaccessibilityservice.SettingsActivity"
     />

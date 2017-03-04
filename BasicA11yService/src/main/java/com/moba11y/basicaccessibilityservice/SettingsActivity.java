@@ -1,4 +1,4 @@
-package com.moba11y.basiceaccessibilityservice;
+package com.moba11y.basicaccessibilityservice;
 
 
 import android.annotation.TargetApi;

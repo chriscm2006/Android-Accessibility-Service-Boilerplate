@@ -28,7 +28,7 @@ android {
     compileSdkVersion 25
     buildToolsVersion "25.0.1"
     defaultConfig {
-        applicationId "com.moba11y.basiceaccessibilityservice"
+        applicationId "com.moba11y.basicaccessibilityservice"
         minSdkVersion 18
         targetSdkVersion 25
         versionCode getVersionCode()
@@ -50,19 +50,9 @@ configurations.all {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
-    compile 'com.android.support:appcompat-v7:25.2.0'
-    compile 'com.android.support:support-v4:25.2.0'
-    compile 'com.android.support:support-vector-drawable:25.2.0'
-
     //My own Android Accessibility Utilities Library.
     compile 'com.github.chriscm2006:Android-Accessibility-Utilities:-SNAPSHOT'
 
     //My own logger library.
     compile 'com.github.chriscm2006:ChrisLogger:-SNAPSHOT'
-
-    testCompile 'junit:junit:4.12'
 }
